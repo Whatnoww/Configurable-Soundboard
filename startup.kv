@@ -1,0 +1,32 @@
+<Loader>:
+    name: "loader"
+
+    sizing: 0, 0
+    posing: 100/2
+    backdrop: 0, 0, 0, 1
+    imgvis: 1,1,1,0
+    imgsize: .5,.5
+
+    FloatLayout:
+
+        canvas.before:
+            Color:
+                rgba: root.backdrop
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        canvas:
+            Color:
+                rgba: 1,1,1,1
+            Ellipse:
+                pos: [self.center_x - root.posing, self.center_y - root.posing]
+                size: root.sizing
+                source: './png/pink.png'
+
+        Image:
+            source: './png/title.png'
+            size_hint: root.imgsize
+            pos_hint: {"center_x":.5,"center_y":.5}
+            color: root.imgvis
+            mipmap: True

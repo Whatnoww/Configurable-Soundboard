@@ -1,0 +1,484 @@
+WindowManager:
+    Principal:
+    Setting:
+
+#: import threading threading
+
+<Principal>
+    name: "principal"
+    backdrop: backdrop
+
+    redyx: -0.5
+    redyy: -0.5
+    greenx: -0.5
+    greeny: 0
+
+    canvas.before:
+        Color:
+            rgba: 0.23, 0.082, 0.23, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    FloatLayout:
+
+        Image:
+            source: './png/redshell.png'
+            mipmap: True
+            size_hint_x: .1
+            height: self.width*1
+            pos_hint: {"center_x": root.redyx, "center_y": root.redyy}
+
+        Image:
+            source: './png/greenshell.png'
+            mipmap: True
+            size_hint_x: .1
+            height: self.width*1
+            pos_hint: {"center_x": root.greenx, "center_y": root.greeny}
+
+        Image:
+            id: backdrop
+            source: './png/snow.zip'
+            anim_delay: 0.016
+            size_hint_x: 1
+            size_hint_y: 1
+            keep_ratio: False
+            allow_stretch: True
+            pos_hint: {"x": 0, "y": 0}
+
+        Opaque:
+            text: "The Nmeade Soundboard"
+            bold: True
+            size_hint: 1, .08
+            pos_hint: {"x": 0, "y": 0.92}
+            background_color: 0.39,0.276,0.49,1
+            font_size: dp(20)
+
+        ScrollView:
+            size_hint: 1, .92
+            pos_hint: {"x": 0, "bottom": 0}
+            do_scroll_x: False
+            do_scroll_y: True
+            bar_color: (0,0,0,0)
+
+            GridLayout:
+                cols: 1
+                padding: 0
+                pos_hint: {"x": 0, "bottom": 0}
+                size_hint: 1, None
+                height: self.minimum_height
+
+                GridLayout:
+                    cols: 2
+                    spacing: dp(40)
+                    padding: dp(20)
+                    size_hint: 1, None
+                    height: self.minimum_height
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            threading.Thread(root.play('./audio/good/goodtimes', 1)).start()
+                        Image:
+                            source: './png/good.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Good Times'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/bad/badtimes', 2)
+                        Image:
+                            source: './png/bad.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Bad Times'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/fruit/fruit', 3)
+                        Image:
+                            source: './png/redshell.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Item Fruitbowl'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/catch/catch', 4)
+                        Image:
+                            source: './png/catch.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Catchphrases'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/baby/baby', 5)
+                        Image:
+                            source: './png/chupete.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Oh baby!'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/disbelief/disbelief', 6)
+                        Image:
+                            source: './png/disbelief.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Disbelief'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/suprise/suprise', 7)
+                        Image:
+                            source: './png/suprise.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Suprise'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/letsgo/letsgo', 8)
+                        Image:
+                            source: './png/shock.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: "Let's go!"
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/wow/wow', 9)
+                        Image:
+                            source: './png/shock.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Wow!'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/heytroy/heytroy', 10)
+                        Image:
+                            source: './png/shock.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Hey Troy!'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/laugh/laugh', 11)
+                        Image:
+                            source: './png/shock.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Laugh'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/rannoise/random', 12)
+                        Image:
+                            source: './png/shock.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Random Noises'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/ranfrase/ranfrase', 13)
+                        Image:
+                            source: './png/shock.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Random Frases'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+                    RoundButton:
+                        text: ""
+                        size_hint: .3, None
+                        height: self.width*1
+                        on_release:
+                            root.play('./audio/shock/shock', 14)
+                        Image:
+                            source: './png/shock.png'
+                            mipmap: True
+                            pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                            height: self.parent.height*0.75
+                            width: self.height*0.75
+                        Description:
+                            text: 'Shock Dodge!'
+                            height: self.parent.height/4
+                            width: self.parent.width
+                            pos: self.parent.x, self.parent.y
+
+
+
+<Settings>:
+
+    FloatLayout:
+
+
+<RoundButton@Button>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    bg_color: (0.35,0.4,0.4,1)
+    canvas.before:
+        Color:
+            rgba: self.bg_color
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [dp(10)]
+
+#: import Factory kivy.factory.Factory
+<Logout@ModalView>:
+    size_hint: .8, .3
+    auto_dismiss: False
+    background: './png/fulltransparent.png'
+    canvas:
+        Color:
+            rgba: 0.15,0.15,0.15,0
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+
+    GridLayout:
+        cols: 1
+        size_hint: 1, None
+        height: self.minimum_height
+        canvas:
+            Color:
+                rgba: .15, .15, .15, 1
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [dp(20)]
+
+        GridLayout:
+            cols: 1
+            size_hint: 1, None
+            height: self.minimum_height
+            canvas:
+                Color:
+                    rgba: .22, .22, .22, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [dp(20), dp(20), 0, 0]
+
+            Label:
+                text:'Salir?'
+                size_hint: 1, None
+                height: self.width*.1
+
+        GridLayout:
+            cols: 1
+            size_hint:1, None
+            height: self.minimum_height
+
+            Label:
+                text:''
+                size_hint: 1, None
+                height: self.width*.05
+
+        GridLayout:
+            cols: 1
+            size_hint: 1, None
+            height: self.minimum_height
+
+            Label:
+                text: 'Seguro que quieres salir?\nSe borraran los datos no guardados'
+                size_hint: 1, None
+                height: self.width*.1
+                halign: 'center'
+
+        GridLayout:
+            cols: 1
+            size_hint:1, None
+            height: self.minimum_height
+
+            Label:
+                text:''
+                size_hint: 1, None
+                height: self.width*.1
+
+        GridLayout:
+            cols: 5
+            size_hint: 1, None
+            height: self.minimum_height
+
+            Label:
+                text: ''
+                size_hint: .05, 1
+
+            RoundButton:
+                text: 'Salir'
+                size_hint: .425, None
+                height: self.width*.3
+                on_release:
+                    root.dismiss()
+                    root.goout()
+
+            Label:
+                text: ''
+                size_hint: .05, 1
+
+            RoundButton:
+                text: 'Volver'
+                size_hint: .425, 1
+                on_release:
+                    root.dismiss()
+
+            Label:
+                text: ''
+                size_hint: .05, 1
+
+        GridLayout:
+            cols: 1
+            size_hint:1, None
+            height: self.minimum_height
+
+            Label:
+                text:''
+                size_hint: 1, None
+                height: self.width*.05
+
+#: import ew kivy.uix.effectwidget
+<Blur@EffectWidget>
+    effects: ew.HorizontalBlurEffect(size=4), ew.VerticalBlurEffect(size=4)
+
+<Opaque@Label>
+    background_color: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<Description@Label>
+    background_color: (1,1,1,1)
+    bg_color: (0.17,0.17,0.17,1)
+    canvas.before:
+        Color:
+            rgba: self.bg_color
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [dp(0), dp(0), dp(10), dp(10)]
