@@ -44,10 +44,8 @@ class Principal(Screen):
         Clock.schedule_once(self.comence, 0)
 
     def comence(self, *args):
-        T1 = Thread(target=self.redshell)
-        T2 = Thread(target=self.greenshell)
-        T1.start()
-        T2.start()
+        threading.Thread(target=self.redshell).start()
+        threading.Thread(target=self.greenshell).start()
 
     def redshell(self, *args):
         Animation.cancel_all(self, 'redyx', 'redyy')
