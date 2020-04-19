@@ -1,5 +1,7 @@
 import time
+import datetime
 import random
+import threading
 from random import seed
 from random import randint
 from kivy.app import App
@@ -14,14 +16,12 @@ from kivy.core.audio import SoundLoader
 from kivy.properties import StringProperty, NumericProperty, OptionProperty, \
     AliasProperty, BooleanProperty, BoundedNumericProperty, ObjectProperty
 from kivy.utils import platform
-from kivy.setupconfig import USE_SDL2
 from kivy.animation import Animation
-from kivy.graphics import Line
 
 
 Window.softinput_mode = 'below_target'
 Window.keyboard_anim_args = {'d': 0.125, 't': 'in_out_quart'}
-Window.size = (348, 618)
+Window.size = (536, 953)
 print(Window.size)
 
 
@@ -30,10 +30,17 @@ class Principal(Screen):
     redyy = NumericProperty(0)
     greenx = NumericProperty(0)
     greeny = NumericProperty(0)
+    backdropsrc = ObjectProperty(None)
+
+    def on_pre_enter(self, *args):
+        d = datetime.date.today()
+        month = int(d.strftime('%m'))
+        if month is 11 or 12 or 1 or 2:
+            self.backdropsrc = './png/snow.zip'
 
     def on_enter(self, *args):
-        Clock.schedule_once(self.redshell, 0)
-        Clock.schedule_once(self.greenshell, 1)
+        threading.Thread(target=self.redshell).start()
+        threading.Thread(target=self.greenshell).start()
 
     def redshell(self, *args):
         Animation.cancel_all(self, 'redyx', 'redyy')
