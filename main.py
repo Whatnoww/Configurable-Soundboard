@@ -2,6 +2,7 @@ import time
 import datetime
 import random
 import threading
+from threading import Thread
 from random import seed
 from random import randint
 from kivy.app import App
@@ -13,8 +14,7 @@ from kivy.core.window import Window
 from kivy.utils import platform
 from kivy.clock import Clock, mainthread
 from kivy.core.audio import SoundLoader
-from kivy.properties import StringProperty, NumericProperty, OptionProperty, \
-    AliasProperty, BooleanProperty, BoundedNumericProperty, ObjectProperty
+from kivy.properties import StringProperty, NumericProperty, OptionProperty, AliasProperty, BooleanProperty, BoundedNumericProperty, ObjectProperty
 from kivy.utils import platform
 from kivy.animation import Animation
 
@@ -35,12 +35,18 @@ class Principal(Screen):
     def on_pre_enter(self, *args):
         d = datetime.date.today()
         month = int(d.strftime('%m'))
+        print(month)
         if month is 11 or 12 or 1 or 2:
             self.backdropsrc = './png/snow.zip'
 
     def on_enter(self, *args):
-        threading.Thread(target=self.redshell).start()
-        threading.Thread(target=self.greenshell).start()
+        Clock.schedule_once(self.comence, 0)
+
+    def comence(self, *args):
+        T1 = Thread(target=self.redshell)
+        T2 = Thread(target=self.greenshell)
+        T1.start()
+        T2.start()
 
     def redshell(self, *args):
         Animation.cancel_all(self, 'redyx', 'redyy')
