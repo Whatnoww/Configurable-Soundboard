@@ -14,7 +14,8 @@ from kivy.core.window import Window
 from kivy.utils import platform
 from kivy.clock import Clock, mainthread
 from kivy.core.audio import SoundLoader
-from kivy.properties import StringProperty, NumericProperty, OptionProperty, AliasProperty, BooleanProperty, BoundedNumericProperty, ObjectProperty
+from kivy.properties import StringProperty, NumericProperty, OptionProperty, AliasProperty, BooleanProperty, \
+    BoundedNumericProperty, ObjectProperty
 from kivy.utils import platform
 from kivy.animation import Animation
 
