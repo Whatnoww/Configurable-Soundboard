@@ -18,12 +18,14 @@ from kivy.properties import StringProperty, NumericProperty, OptionProperty, Ali
     BoundedNumericProperty, ObjectProperty
 from kivy.utils import platform
 from kivy.animation import Animation
+from kivy.config import Config
 
 
 Window.softinput_mode = 'below_target'
 Window.keyboard_anim_args = {'d': 0.125, 't': 'in_out_quart'}
-Window.size = (536, 953)
-print(Window.size)
+Clock.max_iteration = 40
+#Window.size = (536, 953)
+#print(Window.size)
 
 
 class Principal(Screen):
@@ -36,16 +38,18 @@ class Principal(Screen):
     def on_pre_enter(self, *args):
         d = datetime.date.today()
         month = int(d.strftime('%m'))
-        print(month)
-        if month is 11 or 12 or 1 or 2:
+        if month == 11:
+            self.backdropsrc = './png/snow.zip'
+        if month == 12:
+            self.backdropsrc = './png/snow.zip'
+        if month == 1:
+            self.backdropsrc = './png/snow.zip'
+        if month == 2:
             self.backdropsrc = './png/snow.zip'
 
     def on_enter(self, *args):
-        Clock.schedule_once(self.comence, 0)
-
-    def comence(self, *args):
-        threading.Thread(target=self.redshell).start()
-        threading.Thread(target=self.greenshell).start()
+        #Clock.schedule_once(self.greenshell, 0)
+        Clock.schedule_once(self.redshell, 0)
 
     def redshell(self, *args):
         Animation.cancel_all(self, 'redyx', 'redyy')
@@ -54,7 +58,8 @@ class Principal(Screen):
         valuey = float(random.uniform(-0.5, 1.5))
         redanim = Animation(redyx=(valuex), redyy=(valuey), duration=3)
         redanim.start(self)
-        Clock.schedule_once(self.redshell, 2)
+        reloadred = Clock.create_trigger(self.redshell, 3)
+        reloadred()
 
     def greenshell(self, *args):
         Animation.cancel_all(self, 'greenx', 'greeny')
@@ -69,7 +74,8 @@ class Principal(Screen):
         resulty = 'valueyy'+ y
         greenanim = Animation(greenx=eval(resultx), greeny=eval(resulty), duration=5)
         greenanim.start(self)
-        Clock.schedule_once(self.greenshell, 5)
+        reloadgreen = Clock.create_trigger(self.greenshell, 5)
+        reloadgreen()
 
     def play(self, directory, num):
         print(time.time())
