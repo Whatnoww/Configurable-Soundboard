@@ -143,7 +143,7 @@ WindowManager:
                         on_release:
                             threading.Thread(root.play('./audio/fruit/fruit', 3)).start()
                         Image:
-                            source: './png/redshell.png'
+                            source: './png/redshelldull.png'
                             mipmap: True
                             pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
                             height: self.parent.height*0.75
@@ -359,7 +359,7 @@ WindowManager:
 <RoundButton@Button>
     background_color: (0,0,0,0)
     background_normal: ''
-    bg_color: (0.14,0.40,0.42,1)
+    bg_color: (0.0,0.50,0.70,1)
     canvas.before:
         Color:
             rgba: self.bg_color
@@ -496,7 +496,7 @@ WindowManager:
 
 <Description@Label>
     background_color: (1,1,1,1)
-    bg_color: (0.0,0.25,0.28,1)
+    bg_color: (0.0,0.34,0.51,1)
     canvas.before:
         Color:
             rgba: self.bg_color
@@ -506,4 +506,4 @@ WindowManager:
             radius: [dp(0), dp(0), dp(10), dp(10)]
 
 <Widget>
-    font_name: './font/Muli-SemiBold'
+    font_name: './font/Cabin-Regular'

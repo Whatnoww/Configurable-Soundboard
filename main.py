@@ -74,8 +74,7 @@ class Principal(Screen):
         valuey = float(random.uniform(-0.5, 1.5))
         redanim = Animation(redyx=(valuex), redyy=(valuey), duration=3)
         redanim.start(self)
-        reloadred = Clock.create_trigger(self.redshell, 3)
-        reloadred()
+        Clock.schedule_once(self.redshell, 3)
 
     def greenshell(self, *args):
         seed(time.time())
