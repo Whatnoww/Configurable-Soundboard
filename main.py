@@ -1,58 +1,74 @@
 import time
-import datetime
 import random
-import threading
-from threading import Thread
 from random import seed
 from random import randint
 from kivy.app import App
-from kivy.lang import Builder
-from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.screenmanager import ScreenManager, Screen, CardTransition, WipeTransition, SwapTransition, \
-    FadeTransition, RiseInTransition
+from kivy.uix.screenmanager import ScreenManager, Screen, CardTransition, WipeTransition
 from kivy.core.window import Window
-from kivy.utils import platform
-from kivy.clock import Clock, mainthread
-from kivy.core.audio import SoundLoader
-from kivy.properties import StringProperty, NumericProperty, OptionProperty, AliasProperty, BooleanProperty, \
-    BoundedNumericProperty, ObjectProperty
+from kivy.clock import Clock
+from kivy.properties import StringProperty, NumericProperty, ObjectProperty
 from kivy.utils import platform
 from kivy.animation import Animation
-from kivy.config import Config
 
 
 Window.softinput_mode = 'below_target'
 Window.keyboard_anim_args = {'d': 0.125, 't': 'in_out_quart'}
-Clock.max_iteration = 40
 #Window.size = (536, 953)
 #print(Window.size)
 
 
 class Principal(Screen):
+
+    greenshell = ObjectProperty(None)
+    redshell = ObjectProperty(None)
     redyx = NumericProperty(0)
     redyy = NumericProperty(0)
     greenx = NumericProperty(0)
     greeny = NumericProperty(0)
     backdropsrc = ObjectProperty(None)
+    animtime = NumericProperty(99)
+    backdropsource = ObjectProperty(None)
+    layer1posx = NumericProperty(0.5)
+    layer1posy = NumericProperty(0)
+    layer2posx = NumericProperty(0)
+    layer2posy = NumericProperty(0)
 
     def on_pre_enter(self, *args):
+        import datetime
         d = datetime.date.today()
         month = int(d.strftime('%m'))
         if month == 11:
             self.backdropsrc = './png/snow.zip'
+            self.animtime = 0.016
         if month == 12:
             self.backdropsrc = './png/snow.zip'
+            self.animtime = 0.016
         if month == 1:
             self.backdropsrc = './png/snow.zip'
+            self.animtime = 0.016
         if month == 2:
             self.backdropsrc = './png/snow.zip'
+            self.animtime = 0.016
 
     def on_enter(self, *args):
-        #Clock.schedule_once(self.greenshell, 0)
-        Clock.schedule_once(self.redshell, 0)
+        l1 = Animation(layer1posx=0.8, layer1posy=1.5, duration=20)
+        l2 = Animation(layer2posx=1, layer2posy=2, duration=20)
+        l1 += Animation(layer1posx=1, layer1posy=-0.5, duration=0)
+        l2 += Animation(layer2posx=1, layer2posy=-2, duration=0)
+        l1 += Animation(layer1posx=0.3, layer1posy=1.5, duration=20)
+        l2 += Animation(layer2posx=0, layer2posy=3, duration=20)
+        l1 += Animation(layer1posx=0, layer1posy=-0.5, duration=0)
+        l2 += Animation(layer2posx=0, layer2posy=-2, duration=0)
+        l1.repeat = True
+        l2.repeat = True
+        l1.start(self)
+        l2.start(self)
+
+        import threading
+        threading.Thread(target=self.greenshell).start()
+        threading.Thread(target=self.redshell).start()
 
     def redshell(self, *args):
-        Animation.cancel_all(self, 'redyx', 'redyy')
         seed(time.time())
         valuex = float(random.uniform(-0.5, 1.5))
         valuey = float(random.uniform(-0.5, 1.5))
@@ -62,7 +78,6 @@ class Principal(Screen):
         reloadred()
 
     def greenshell(self, *args):
-        Animation.cancel_all(self, 'greenx', 'greeny')
         seed(time.time())
         valuexx1 = float(random.uniform(-0.2, 0))
         valuexx2 = float(random.uniform(1, 1.2))
@@ -74,10 +89,10 @@ class Principal(Screen):
         resulty = 'valueyy'+ y
         greenanim = Animation(greenx=eval(resultx), greeny=eval(resulty), duration=5)
         greenanim.start(self)
-        reloadgreen = Clock.create_trigger(self.greenshell, 5)
-        reloadgreen()
+        Clock.schedule_once(self.greenshell, 5)
 
     def play(self, directory, num):
+        from kivy.core.audio import SoundLoader
         print(time.time())
         seed(time.time())
         # Good Times
@@ -162,7 +177,7 @@ def loadapp(*args):
     for screen in screens:
         wm.add_widget(screen)
     wm.transition = WipeTransition()
-    Clock.schedule_once(homescreen, 4)
+    Clock.schedule_once(homescreen, 3.2)
 
 
 def homescreen(*args):
@@ -180,7 +195,7 @@ class Loader(Screen):
         anim.start(self)
         Clock.schedule_once(loadapp, 0)
 
-
+from kivy.lang import Builder
 Builder.load_file('startup.kv')
 wm = WindowManager()
 wm.add_widget(Loader(name="loader"))
@@ -193,7 +208,7 @@ class Primary(App):
 
     def on_enter(self):
         if platform == "android":
-            Clock.schedule_once(self.remove_android_splash, 0)
+            Clock.schedule_once(self.remove_android_splash)
 
     def remove_android_splash(self, *args):
         from jnius import autoclass
@@ -210,6 +225,4 @@ class Primary(App):
 
 if __name__ == "__main__":
     Primary().run()
-# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-# End of Code
-# //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

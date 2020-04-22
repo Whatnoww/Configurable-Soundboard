@@ -13,7 +13,7 @@ package.domain = org.nmeadesoundbar
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,wav
+source.include_exts = py,png,jpg,kv,atlas,wav,zip,ttf
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -35,8 +35,8 @@ version = 0.2
 # version.filename = %(source.dir)s/main.py
 
 # (list) Application requirements
-# comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==1.10.1
+# comma separated e.g. requirements = sqlite3,kivy,5ed7a1335bd66c4365b666eccce049f27ebfc51b
+requirements = python3,kivy==5ed7a1335bd66c4365b666eccce049f27ebfc51b
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes

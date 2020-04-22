@@ -12,17 +12,40 @@ WindowManager:
     redyy: -0.5
     greenx: -0.5
     greeny: 0
-
-    canvas.before:
-        Color:
-            rgba: 0.14, 0, 0.23, 1
-        Rectangle:
-            size: self.size
-            pos: self.pos
+    animtime: 99
+    backdropsource: ''
+    layer1posx: 0.3
+    layer1posy: -0.5
+    layer2posx: 0
+    layer2posy: -1
 
     FloatLayout:
 
         Image:
+            id: back
+            source: './png/backdrop.png'
+            size_hint_x: 1
+            size_hint_y: 1
+            keep_ratio: False
+            allow_stretch: True
+            pos_hint: {"x": 0, "y": 0}
+
+        Image:
+            source: './png/layer1.png'
+            mipmap: True
+            keep_ratio: True
+            size_hint_x: 1
+            pos_hint: {"center_x": root.layer1posx, "center_y": root.layer1posy}
+
+        Image:
+            source: './png/layer2.png'
+            mipmap: True
+            keep_ratio: True
+            size_hint_x: 1
+            pos_hint: {"center_x": root.layer2posx, "center_y": root.layer2posy}
+
+        Image:
+            id: redshell
             source: './png/redshell.png'
             mipmap: True
             size_hint_x: .1
@@ -30,6 +53,7 @@ WindowManager:
             pos_hint: {"center_x": root.redyx, "center_y": root.redyy}
 
         Image:
+            id: greenshell
             source: './png/greenshell.png'
             mipmap: True
             size_hint_x: .1
@@ -39,7 +63,7 @@ WindowManager:
         Image:
             id: backdrop
             source: root.backdropsrc
-            anim_delay: 0.016
+            anim_delay: root.animtime
             size_hint_x: 1
             size_hint_y: 1
             keep_ratio: False
@@ -335,7 +359,7 @@ WindowManager:
 <RoundButton@Button>
     background_color: (0,0,0,0)
     background_normal: ''
-    bg_color: (0.35,0.4,0.4,1)
+    bg_color: (0.14,0.40,0.42,1)
     canvas.before:
         Color:
             rgba: self.bg_color
@@ -472,7 +496,7 @@ WindowManager:
 
 <Description@Label>
     background_color: (1,1,1,1)
-    bg_color: (0.17,0.17,0.17,1)
+    bg_color: (0.0,0.25,0.28,1)
     canvas.before:
         Color:
             rgba: self.bg_color
@@ -480,3 +504,6 @@ WindowManager:
             size: self.size
             pos: self.pos
             radius: [dp(0), dp(0), dp(10), dp(10)]
+
+<Widget>
+    font_name: './font/Muli-SemiBold'
