@@ -74,6 +74,7 @@ class Principal(Screen):
         valuey = float(random.uniform(-0.5, 1.5))
         redanim = Animation(redyx=(valuex), redyy=(valuey), duration=3)
         redanim.start(self)
+        redanim.repeat = False
         Clock.schedule_once(self.redshell, 3)
 
     def greenshell(self, *args):
@@ -87,6 +88,7 @@ class Principal(Screen):
         resultx = 'valuexx'+ x
         resulty = 'valueyy'+ y
         greenanim = Animation(greenx=eval(resultx), greeny=eval(resulty), duration=5)
+        greenanim.repeat = False
         greenanim.start(self)
         Clock.schedule_once(self.greenshell, 5)
 
@@ -96,16 +98,16 @@ class Principal(Screen):
         seed(time.time())
         # Good Times
         if num == 1:
-            value = randint(1, 10)
+            value = randint(1, 12)
         # Bad times
         if num == 2:
-            value = randint(1, 6)
+            value = randint(1, 7)
         # Item fruitbowl
         if num == 3:
-            value = randint(1, 8)
+            value = randint(1, 12)
         # Catchphrase
         if num == 4:
-            value = randint(1, 11)
+            value = randint(1, 13)
         # Oh baby!
         if num == 5:
             value = randint(1, 2)
@@ -132,7 +134,7 @@ class Principal(Screen):
             value = randint(1, 3)
         # Random Frases
         if num == 13:
-            value = randint(1, 3)
+            value = randint(1, 4)
         # Bam! Shock Dodge!
         if num == 14:
             value = randint(1, 1)
