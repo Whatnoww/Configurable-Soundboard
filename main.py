@@ -65,32 +65,27 @@ class Principal(Screen):
         l2.start(self)
 
         import threading
-        threading.Thread(target=self.greenshell).start()
-        threading.Thread(target=self.redshell).start()
+        threading.Thread(target=self.shells).start()
 
-    def redshell(self, *args):
-        seed(time.time())
-        valuex = float(random.uniform(-0.5, 1.5))
-        valuey = float(random.uniform(-0.5, 1.5))
-        redanim = Animation(redyx=(valuex), redyy=(valuey), duration=3)
-        redanim.start(self)
-        redanim.repeat = False
-        Clock.schedule_once(self.redshell, 3)
-
-    def greenshell(self, *args):
+    def shells(self, *args):
         seed(time.time())
         valuexx1 = float(random.uniform(-0.2, 0))
         valuexx2 = float(random.uniform(1, 1.2))
         valueyy1 = float(random.uniform(-0.2, 0))
         valueyy2 = float(random.uniform(1, 1.2))
-        y = str(randint(1,2))
-        x = str(randint(1,2))
-        resultx = 'valuexx'+ x
-        resulty = 'valueyy'+ y
+        valuex = float(random.uniform(-0.5, 1.5))
+        valuey = float(random.uniform(-0.5, 1.5))
+        y = randint(1,2)
+        x = randint(1,2)
+        resultx = 'valuexx'+ str(x)
+        resulty = 'valueyy'+ str(y)
+        redanim = Animation(redyx=(valuex), redyy=(valuey), duration=5)
+        redanim.repeat = False
         greenanim = Animation(greenx=eval(resultx), greeny=eval(resulty), duration=5)
         greenanim.repeat = False
+        redanim.start(self)
         greenanim.start(self)
-        Clock.schedule_once(self.greenshell, 5)
+        Clock.schedule_once(self.shells, 5)
 
     def play(self, directory, num):
         from kivy.core.audio import SoundLoader
