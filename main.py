@@ -17,6 +17,8 @@ Window.keyboard_anim_args = {'d': 0.125, 't': 'in_out_quart'}
 #print(Window.size)
 
 
+threadshell = ObjectProperty(None)
+
 class Principal(Screen):
 
     greenshell = ObjectProperty(None)
@@ -32,10 +34,11 @@ class Principal(Screen):
     layer1posy = NumericProperty(0)
     layer2posx = NumericProperty(0)
     layer2posy = NumericProperty(0)
+    stoploop = 0
 
     def on_pre_enter(self, *args):
-        screens = [Setting(name="setting")]
-        for screen in screens:
+        if wm.has_screen("setting") is False:
+            screen = Setting(name="setting")
             wm.add_widget(screen)
         import datetime
         d = datetime.date.today()
@@ -66,26 +69,33 @@ class Principal(Screen):
         l2.repeat = True
         l1.start(self)
         l2.start(self)
+        Principal.stoploop = 0
         import threading
-        threading.Thread(target=self.shells).start()
+        t1 = threading.Thread(target=self.shells)
+        t1.start()
+
+    def on_leave(self, *args):
+        Animation.cancel_all(self)
+        Principal.stoploop = 1
 
     def shells(self, *args):
-        seed(time.time())
-        valuexx1 = float(random.uniform(-0.2, 0))
-        valuexx0 = float(random.uniform(1, 1.2))
-        valueyy1 = float(random.uniform(-0.2, 0))
-        valueyy0 = float(random.uniform(1, 1.2))
-        valuex = float(random.uniform(-0.5, 1.5))
-        valuey = float(random.uniform(-0.5, 1.5))
-        resultx = 'valuexx'+ str(int(valuex))
-        resulty = 'valueyy'+ str(int(valuey))
-        redanim = Animation(redyx=(valuex), redyy=(valuey), duration=5)
-        redanim.repeat = False
-        greenanim = Animation(greenx=eval(resultx), greeny=eval(resulty), duration=5)
-        greenanim.repeat = False
-        redanim.start(self)
-        greenanim.start(self)
-        Clock.schedule_once(self.shells, 5)
+        if Principal.stoploop == 0:
+            seed(time.time())
+            valuexx1 = float(random.uniform(-0.2, 0))
+            valuexx0 = float(random.uniform(1, 1.2))
+            valueyy1 = float(random.uniform(-0.2, 0))
+            valueyy0 = float(random.uniform(1, 1.2))
+            valuex = float(random.uniform(-0.5, 1.5))
+            valuey = float(random.uniform(-0.5, 1.5))
+            resultx = 'valuexx'+ str(int(valuex))
+            resulty = 'valueyy'+ str(int(valuey))
+            redanim = Animation(redyx=(valuex), redyy=(valuey), duration=5)
+            redanim.repeat = False
+            greenanim = Animation(greenx=eval(resultx), greeny=eval(resulty), duration=5)
+            greenanim.repeat = False
+            redanim.start(self)
+            greenanim.start(self)
+            Clock.schedule_once(self.shells, 5)
 
     def play(self, directory, num):
         from kivy.core.audio import SoundLoader
@@ -243,12 +253,12 @@ class Primary(App):
         hide_loading_screen()
 
     def on_pause(self, *args):
-        Animation.cancel_all()
+        Animation.cancel_all(Principal)
+        Principal.stoploop = 1
         return True
 
     def on_resume(self, *args):
-        Clock.schedule_once(Principal.greenshell, 0)
-        Clock.schedule_once(Principal.redshell, 0)
+        pass
 
 
 if __name__ == "__main__":
