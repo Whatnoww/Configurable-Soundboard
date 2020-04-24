@@ -79,6 +79,25 @@ WindowManager:
             font_size: dp(20)
             color: 0.9,0.9,0.9,1
 
+        Button:
+            text: ""
+            background_normal: './png/fulltransparent.png'
+            background_down: './png/fulltransparent.png'
+            size_hint: .12, 0.08
+            pos_hint: {"right":1,"top":1}
+            on_release:
+                root.settings()
+            canvas.before:
+                Color:
+                    rgba: 0,0,0,1
+            Image:
+                source: './png/settings.png'
+                mipmap: True
+                pos: self.parent.x, self.parent.y
+                keep_ratio: True
+                height: self.parent.height*1
+                width: self.parent.width*1
+
         ScrollView:
             size_hint: 1, .92
             pos_hint: {"x": 0, "bottom": 0}
@@ -352,9 +371,141 @@ WindowManager:
                             width: self.parent.width
                             pos: self.parent.x, self.parent.y
 
-<Settings>:
+<Setting>:
+    name: "setting"
 
     FloatLayout:
+
+        Image:
+            source: './png/backdrop.png'
+            size_hint_x: 1
+            size_hint_y: 1
+            keep_ratio: False
+            allow_stretch: True
+            pos_hint: {"x": 0, "y": 0}
+
+#        ScrollView:
+#            size_hint: 1, 1
+#            pos_hint: {"x": 0, "bottom": 0}
+#            do_scroll_x: False
+#            do_scroll_y: True
+#            bar_color: (0,0,0,0)
+
+        GridLayout:
+            cols: 1
+            padding: dp(20)
+            spacing: dp(20)
+            pos_hint: {"x": 0, "top": 1}
+            size_hint: 1, None
+            height: self.minimum_height
+
+            Label:
+                text: "Subscribe and Follow Nmeade!"
+                size_hint: 1, None
+                #height: self.width*.1
+                text_size: self.width*.8, None
+                halign: 'center'
+                valign: 'middle'
+                bg_color: (0.0,0.50,0.70,1)
+                canvas.before:
+                    Color:
+                        rgba: self.bg_color
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [dp(10)]
+
+            GridLayout:
+                cols: 2
+                spacing: dp(40)
+                padding: 0
+                size_hint: 1, None
+                height: self.minimum_height
+
+                Button:
+                    text: ""
+                    size_hint: .3, None
+                    height: self.width*1
+                    background_normal: './png/y.png'
+                    background_down: './png/y2.png'
+                    border: 0,0,0,0
+                    on_release:
+                        root.youtube()
+                    Image:
+                        source: './png/yt.png'
+                        mipmap: True
+                        pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                        height: self.parent.height*0.75
+                        width: self.height*0.75
+                    Label:
+                        text: 'YouTube'
+                        height: self.parent.height/4
+                        width: self.parent.width
+                        pos: self.parent.x, self.parent.y
+
+                Button:
+                    text: ""
+                    size_hint: .3, None
+                    height: self.width*1
+                    background_normal: './png/tw.png'
+                    background_down: './png/tw2.png'
+                    border: 0,0,0,0
+                    on_release:
+                        root.twitch()
+                    Image:
+                        source: './png/twitch.png'
+                        mipmap: True
+                        pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                        height: self.parent.height*0.75
+                        width: self.height*0.75
+                    Label:
+                        text: 'Twitch'
+                        height: self.parent.height/4
+                        width: self.parent.width
+                        pos: self.parent.x, self.parent.y
+
+                Button:
+                    text: ""
+                    size_hint: .3, None
+                    height: self.width*1
+                    background_normal: './png/t.png'
+                    background_down: './png/t2.png'
+                    border: 0,0,0,0
+                    on_release:
+                        root.twitter()
+                    Image:
+                        source: './png/twitter.png'
+                        mipmap: True
+                        pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                        height: self.parent.height*0.75
+                        width: self.height*0.75
+                    Label:
+                        text: 'Twitter'
+                        height: self.parent.height/4
+                        width: self.parent.width
+                        pos: self.parent.x, self.parent.y
+
+                Button:
+                    text: ""
+                    size_hint: .3, None
+                    height: self.width*1
+                    background_normal: './png/igrad.png'
+                    background_down: './png/igrad2.png'
+                    border: 0,0,0,0
+                    on_release:
+                        root.instagram()
+                    Image:
+                        source: './png/instagram.png'
+                        mipmap: True
+                        pos: self.parent.x + ((self.parent.width-self.width)/2), self.parent.y + ((self.parent.height-(self.parent.height)*3/4))
+                        height: self.parent.height*0.75
+                        width: self.height*0.75
+                    Label:
+                        text: 'Instagram'
+                        height: self.parent.height/4
+                        width: self.parent.width
+                        pos: self.parent.x, self.parent.y
+
 
 <RoundButton@Button>
     background_color: (0,0,0,0)

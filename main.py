@@ -34,6 +34,9 @@ class Principal(Screen):
     layer2posy = NumericProperty(0)
 
     def on_pre_enter(self, *args):
+        screens = [Setting(name="setting")]
+        for screen in screens:
+            wm.add_widget(screen)
         import datetime
         d = datetime.date.today()
         month = int(d.strftime('%m'))
@@ -63,22 +66,19 @@ class Principal(Screen):
         l2.repeat = True
         l1.start(self)
         l2.start(self)
-
         import threading
         threading.Thread(target=self.shells).start()
 
     def shells(self, *args):
         seed(time.time())
         valuexx1 = float(random.uniform(-0.2, 0))
-        valuexx2 = float(random.uniform(1, 1.2))
+        valuexx0 = float(random.uniform(1, 1.2))
         valueyy1 = float(random.uniform(-0.2, 0))
-        valueyy2 = float(random.uniform(1, 1.2))
+        valueyy0 = float(random.uniform(1, 1.2))
         valuex = float(random.uniform(-0.5, 1.5))
         valuey = float(random.uniform(-0.5, 1.5))
-        y = randint(1,2)
-        x = randint(1,2)
-        resultx = 'valuexx'+ str(x)
-        resulty = 'valueyy'+ str(y)
+        resultx = 'valuexx'+ str(int(valuex))
+        resulty = 'valueyy'+ str(int(valuey))
         redanim = Animation(redyx=(valuex), redyy=(valuey), duration=5)
         redanim.repeat = False
         greenanim = Animation(greenx=eval(resultx), greeny=eval(resulty), duration=5)
@@ -144,6 +144,11 @@ class Principal(Screen):
 
     soundstorage = ''
 
+    def settings(self):
+        wm.transition = CardTransition()
+        wm.transition.direction = "left"
+        wm.current = "setting"
+
 
 def unload(*args):
     Principal.soundstorage.stop()
@@ -151,7 +156,30 @@ def unload(*args):
 
 
 class Setting(Screen):
-    pass
+
+    def youtube(self):
+        import webbrowser
+        if platform == "android":
+            import android
+        webbrowser.open("https://www.youtube.com/Nmeade")
+
+    def twitch(self):
+        import webbrowser
+        if platform == "android":
+            import android
+        webbrowser.open("https://www.twitch.tv/Nmeade")
+
+    def twitter(self):
+        import webbrowser
+        if platform == "android":
+            import android
+        webbrowser.open("https://twitter.com/nmeade")
+
+    def instagram(self):
+        import webbrowser
+        if platform == "android":
+            import android
+        webbrowser.open("https://www.instagram.com/nmeade5/")
 
 
 class WindowManager(ScreenManager):
@@ -163,13 +191,14 @@ class WindowManager(ScreenManager):
         if key == 27:
             if self.current_screen.name == "principal":
                 return False
-            elif self.current_screen.name == "settings":
-                pass
+            elif self.current_screen.name == "setting":
+                wm.transition.direction = 'right'
+                wm.current = "principal"
                 return True
 
 
 def loadapp(*args):
-    screens = [Principal(name="principal"), Setting(name="settings")]
+    screens = [Principal(name="principal")]
     for screen in screens:
         wm.add_widget(screen)
     wm.transition = WipeTransition()
@@ -210,9 +239,12 @@ class Primary(App):
         from jnius import autoclass
         activity = autoclass('org.kivy.android.PythonActivity').mActivity
         activity.removeLoadingScreen()
+        from android import hide_loading_screen
+        hide_loading_screen()
 
     def on_pause(self, *args):
         Animation.cancel_all()
+        return True
 
     def on_resume(self, *args):
         Clock.schedule_once(Principal.greenshell, 0)
