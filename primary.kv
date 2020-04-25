@@ -398,11 +398,11 @@
             Label:
                 text: "Subscribe and Follow Nmeade!"
                 size_hint: 1, None
-                #height: self.width*.1
+                height: self.width*.1
                 text_size: self.width*.8, None
                 halign: 'center'
                 valign: 'middle'
-                bg_color: (0.0,0.50,0.70,1)
+                bg_color: (0.16,0.16,0.55,1)
                 canvas.before:
                     Color:
                         rgba: self.bg_color
@@ -412,8 +412,8 @@
                         radius: [dp(10)]
 
             GridLayout:
-                cols: 2
-                spacing: dp(40)
+                cols: 4
+                spacing: dp(20)
                 padding: 0
                 size_hint: 1, None
                 height: self.minimum_height
@@ -501,6 +501,40 @@
                         height: self.parent.height/4
                         width: self.parent.width
                         pos: self.parent.x, self.parent.y
+
+            RoundButton:
+                text: "You can find the GitHub here!"
+                size_hint: 1, None
+                #height: self.width*.1
+                text_size: self.width*.8, None
+                halign: 'center'
+                valign: 'middle'
+                bg_color: (0.0,0.50,0.70,1)
+                on_press:
+                    root.git()
+                canvas.before:
+                    Color:
+                        rgba: self.bg_color
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [dp(10)]
+
+            Label:
+                text: "This is a pretty new app and I'm willing to take suggestions. Any ideas are welcome."
+                size_hint: 1, None
+                #height: self.width*.1
+                text_size: self.width*.8, None
+                halign: 'center'
+                valign: 'middle'
+                bg_color: (0.0,0.50,0.70,1)
+                canvas.before:
+                    Color:
+                        rgba: self.bg_color
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius: [dp(10)]
 
 
 <RoundButton@Button>

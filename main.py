@@ -191,6 +191,12 @@ class Setting(Screen):
             import android
         webbrowser.open("https://www.instagram.com/nmeade5/")
 
+    def git(self):
+        import webbrowser
+        if platform == "android":
+            import android
+        webbrowser.open("https://github.com/Whatnoww/Configurable-Soundboard")
+
 
 class WindowManager(ScreenManager):
     def __init__(self, **kwargs):
@@ -212,7 +218,7 @@ def loadapp(*args):
     for screen in screens:
         wm.add_widget(screen)
     wm.transition = WipeTransition()
-    Clock.schedule_once(homescreen, 3.2)
+    Clock.schedule_once(homescreen, 3.5)
 
 
 def homescreen(*args):
