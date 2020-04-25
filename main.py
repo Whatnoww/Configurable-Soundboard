@@ -218,7 +218,7 @@ def loadapp(*args):
     for screen in screens:
         wm.add_widget(screen)
     wm.transition = WipeTransition()
-    Clock.schedule_once(homescreen, 3.5)
+    Clock.schedule_once(homescreen, 4)
 
 
 def homescreen(*args):
