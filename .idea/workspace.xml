@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e867daf1-24f8-4156-83a5-0d66c18fc566" name="Default Changelist" comment="Do everything and all">
+      <change beforePath="$PROJECT_DIR$/bin/nmeadesoundbar-0.2-armeabi-v7a-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/bin/nmeadesoundbar-0.2-armeabi-v7a-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildozer.spec" beforeDir="false" afterPath="$PROJECT_DIR$/buildozer.spec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/primary.kv" beforeDir="false" afterPath="$PROJECT_DIR$/primary.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Kivy-1.11.1.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/Kivy-1.11.1.dist-info/RECORD" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="ProjectId" id="1alKg6tyol0je4shN0lf3TD3skw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/kivy_venv" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Troy TWD98 Soundbar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e867daf1-24f8-4156-83a5-0d66c18fc566" name="Default Changelist" comment="" />
+      <created>1587304848392</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587304848392</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Attempting to delag the app on android. Issue with 30fps on drag.">
+      <created>1587463235017</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587463235017</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Attempting newer less demanding approach.">
+      <created>1587571760664</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587571760664</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added sound effects">
+      <created>1587646433439</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587646433439</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Optimized the shell animations.">
+      <created>1587647527625</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587647527625</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Optimized and added settings menu">
+      <created>1587721874923</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587721874923</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Made everything finally work. Made loops stop properly.">
+      <created>1587724520299</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587724520299</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Changing stuff and adding buttons">
+      <created>1587811207222</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587811207222</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Made everything finally work. Made loops stop properly.">
+      <created>1587811377160</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587811377160</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Do everything and all">
+      <created>1587811486753</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587811486753</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Attempting to delag the app on android. Issue with 30fps on drag." />
+    <MESSAGE value="Attempting newer less demanding approach." />
+    <MESSAGE value="Added sound effects" />
+    <MESSAGE value="Optimized the shell animations." />
+    <MESSAGE value="Optimized and added settings menu" />
+    <MESSAGE value="Changing stuff and adding buttons" />
+    <MESSAGE value="Made everything finally work. Made loops stop properly." />
+    <MESSAGE value="Do everything and all" />
+    <option name="LAST_COMMIT_MESSAGE" value="Do everything and all" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="291" y="239" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587463538327">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="291" y="239" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587463538327" />
+    <state x="673" y="323" width="585" height="516" key="EnvironmentVariablesDialog" timestamp="1587368029312">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="673" y="323" width="585" height="516" key="EnvironmentVariablesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587368029312" />
+    <state x="616" y="339" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587368132493">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="616" y="339" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1587368132493" />
+    <state width="1071" height="171" key="GridCell.Tab.0.bottom" timestamp="1587903515486">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="485" height="171" key="GridCell.Tab.0.bottom/0.27.1366.741/1366.0.1920.1080@0.27.1366.741" timestamp="1587898570786" />
+    <state width="1071" height="171" key="GridCell.Tab.0.bottom/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587903515486" />
+    <state width="1830" height="344" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1366.768@1920.0.1366.768" timestamp="1587724532254" />
+    <state width="1830" height="260" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587812637200" />
+    <state width="1071" height="171" key="GridCell.Tab.0.center" timestamp="1587903515486">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="485" height="171" key="GridCell.Tab.0.center/0.27.1366.741/1366.0.1920.1080@0.27.1366.741" timestamp="1587898570786" />
+    <state width="1071" height="171" key="GridCell.Tab.0.center/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587903515486" />
+    <state width="1830" height="344" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1366.768@1920.0.1366.768" timestamp="1587724532254" />
+    <state width="1830" height="260" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587812637199" />
+    <state width="1071" height="171" key="GridCell.Tab.0.left" timestamp="1587903515486">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="485" height="171" key="GridCell.Tab.0.left/0.27.1366.741/1366.0.1920.1080@0.27.1366.741" timestamp="1587898570785" />
+    <state width="1071" height="171" key="GridCell.Tab.0.left/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587903515486" />
+    <state width="1830" height="344" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1366.768@1920.0.1366.768" timestamp="1587724532254" />
+    <state width="1830" height="260" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587812637199" />
+    <state width="1071" height="171" key="GridCell.Tab.0.right" timestamp="1587903515486">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="485" height="171" key="GridCell.Tab.0.right/0.27.1366.741/1366.0.1920.1080@0.27.1366.741" timestamp="1587898570786" />
+    <state width="1071" height="171" key="GridCell.Tab.0.right/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587903515486" />
+    <state width="1830" height="344" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1366.768@1920.0.1366.768" timestamp="1587724532254" />
+    <state width="1830" height="260" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587812637200" />
+    <state width="1830" height="344" key="GridCell.Tab.1.bottom" timestamp="1587724532254">
+      <screen x="1920" y="0" width="1366" height="768" />
+    </state>
+    <state width="1830" height="344" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.1366.768@1920.0.1366.768" timestamp="1587724532254" />
+    <state width="1830" height="344" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587461617419" />
+    <state width="1830" height="344" key="GridCell.Tab.1.center" timestamp="1587724532254">
+      <screen x="1920" y="0" width="1366" height="768" />
+    </state>
+    <state width="1830" height="344" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.1366.768@1920.0.1366.768" timestamp="1587724532254" />
+    <state width="1830" height="344" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587461617418" />
+    <state width="1830" height="344" key="GridCell.Tab.1.left" timestamp="1587724532254">
+      <screen x="1920" y="0" width="1366" height="768" />
+    </state>
+    <state width="1830" height="344" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.1366.768@1920.0.1366.768" timestamp="1587724532254" />
+    <state width="1830" height="344" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587461617418" />
+    <state width="1830" height="344" key="GridCell.Tab.1.right" timestamp="1587724532254">
+      <screen x="1920" y="0" width="1366" height="768" />
+    </state>
+    <state width="1830" height="344" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1366.768@1920.0.1366.768" timestamp="1587724532254" />
+    <state width="1830" height="344" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587461617419" />
+    <state x="1997" y="168" key="SettingsEditor" timestamp="1587903564793">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1997" y="168" key="SettingsEditor/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1587903564793" />
+    <state x="89" y="168" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1587560215962" />
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1587811496372">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1587811496372" />
+    <state x="725" y="269" width="527" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1587811297547">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="725" y="269" width="527" height="566" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587811297547" />
+  </component>
+</project>
