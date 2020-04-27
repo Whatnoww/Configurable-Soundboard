@@ -10,14 +10,14 @@ from kivy.properties import StringProperty, NumericProperty, ObjectProperty
 from kivy.utils import platform
 from kivy.animation import Animation
 
-
 Window.softinput_mode = 'below_target'
 Window.keyboard_anim_args = {'d': 0.125, 't': 'in_out_quart'}
-#Window.size = (536, 953)
-#print(Window.size)
+# Window.size = (536, 953)
+# print(Window.size)
 
 
 threadshell = ObjectProperty(None)
+
 
 class Principal(Screen):
 
@@ -87,8 +87,8 @@ class Principal(Screen):
             valueyy0 = float(random.uniform(1, 1.2))
             valuex = float(random.uniform(-0.5, 1.5))
             valuey = float(random.uniform(-0.5, 1.5))
-            resultx = 'valuexx'+ str(int(valuex))
-            resulty = 'valueyy'+ str(int(valuey))
+            resultx = 'valuexx' + str(int(valuex))
+            resulty = 'valueyy' + str(int(valuey))
             redanim = Animation(redyx=(valuex), redyy=(valuey), duration=5)
             redanim.repeat = False
             greenanim = Animation(greenx=eval(resultx), greeny=eval(resulty), duration=5)
@@ -150,7 +150,7 @@ class Principal(Screen):
             duration = float(leng)
             sound.play()
             Principal.soundstorage = sound
-            Clock.schedule_once(unload, duration+0.01)
+            Clock.schedule_once(unload, duration + 0.01)
 
     soundstorage = ''
 
@@ -232,11 +232,13 @@ class Loader(Screen):
         print('on enter fired')
         anim = Animation(backdrop=(0.2, 0.2, 0.7, 1), duration=1)
         anim += Animation(sizing=(5000, 5000), posing=(2375), duration=1)
-        anim += Animation(imgvis=(1, 1, 1, 1), imgsize=(1,1), duration=1)
+        anim += Animation(imgvis=(1, 1, 1, 1), imgsize=(1, 1), duration=1)
         anim.start(self)
         Clock.schedule_once(loadapp, 0)
 
+
 from kivy.lang import Builder
+
 Builder.load_file('startup.kv')
 wm = WindowManager()
 wm.add_widget(Loader(name="loader"))
@@ -269,4 +271,3 @@ class Primary(App):
 
 if __name__ == "__main__":
     Primary().run()
-
