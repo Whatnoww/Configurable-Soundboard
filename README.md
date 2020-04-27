@@ -14,4 +14,12 @@ Not at the moment.
 
 Can I get this app?
 
-Yep! There's a stable release below!
+Yep! There's a stable release below for Android!
+
+https://github.com/Whatnoww/Configurable-Soundboard/releases/tag/1
+
+Grab the apk and install!
+
+Will this come out for iOS?
+
+I can't test iOS devices so unless someone is willing to help me out here it won't be posible.
