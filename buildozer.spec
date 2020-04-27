@@ -36,7 +36,7 @@ version = 0.2
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy,best performance 98c553a, latest good performance 7c0b8d1 /
-requirements = python3,android,kivy==7c0b8d1
+requirements = python3,android,kivy==18f37ed
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes

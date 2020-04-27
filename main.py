@@ -149,20 +149,11 @@ class Principal(Screen):
             leng = sound.length
             duration = float(leng)
             sound.play()
-            Principal.soundstorage = sound
-            Clock.schedule_once(unload, duration + 0.01)
-
-    soundstorage = ''
 
     def settings(self):
         wm.transition = CardTransition()
         wm.transition.direction = "left"
         wm.current = "setting"
-
-
-def unload(*args):
-    Principal.soundstorage.stop()
-    Principal.soundstorage.unload()
 
 
 class Setting(Screen):
