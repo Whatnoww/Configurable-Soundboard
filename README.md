@@ -6,7 +6,7 @@ A pretty basic app I started making in Kivy after Nmeade got called a soundboard
 
 I'm hoping to make this into an app that anyone can configure to their will through simple txt editing, including being able to edit colors, sounds, pictures and the number of categories with ease.
 
-![Screenshot1](https://i.imgur.com/LVMCrja.jpg | width=100)
+<img src="https://i.imgur.com/LVMCrja.jpg" width="400">
 
 ![Screenshot2](https://i.imgur.com/9CgeYTS.jpg | width=100)
 
