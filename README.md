@@ -1,6 +1,6 @@
 # Configurable-Soundboard - Nmeade is a Soundboard!
 
-[Video]()
+[Video](https://youtu.be/Te0RG1UHByc)
 
 A pretty basic app I started making in Kivy after Nmeade got called a soundboard due to his memorable expressions.
 
