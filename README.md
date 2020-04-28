@@ -2,7 +2,7 @@
 
 An app I started making after Nmeade got called a soundboard due to his memorable expressions.
 
-I'm hoping to make this into an app that anyone can configure to their will through simple txt editing.
+I'm hoping to make this into an app that anyone can configure to their will through simple txt editing, including being able to edit colors, sounds, pictures and number of categories.
 
 # Progress:
 
