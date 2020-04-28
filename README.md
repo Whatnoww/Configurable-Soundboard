@@ -28,7 +28,7 @@ I'm waiting for permission to release this app, when it's up, it'll be available
 
 https://github.com/Whatnoww/Configurable-Soundboard/releases/tag/1
 
-Grab the apk and install!
+All you'll need to do is grab the apk and install!
 
 ### Will this come out for iOS?
 
