@@ -38,3 +38,5 @@ I can't test iOS devices so unless someone is willing to help me out here it won
 
 Yes! It's just a matter of whether I'll have time to do it or not. I'm more likely to accept sound effect requests based on videos, since I usually try to update the app with a video per day. You can send me requests by emailing me at:
 ###### whatnoww2@gmail.com
+
+or tweeting at me: https://twitter.com/WhatnowwYT
