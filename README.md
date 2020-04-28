@@ -2,9 +2,9 @@
 
 [Video](https://youtu.be/Te0RG1UHByc)
 
-I'll of course be waiting for Nmeade's permission before publishing the app download itself.
+I'll of course be waiting for [Nmeade's](https://www.youtube.com/Nmeade) permission before publishing the app download itself.
 
-A pretty basic app I started making in Kivy after Nmeade got called a soundboard due to his memorable expressions.
+A pretty basic app I started making in Kivy after [Nmeade](https://www.youtube.com/Nmeade) got called a soundboard due to his memorable expressions.
 
 I'm hoping to make this into an app that anyone can configure to their will through simple txt editing, including being able to edit colors, sounds, pictures and the number of categories with ease.
 
@@ -37,6 +37,9 @@ I can't test iOS devices so unless someone is willing to help me out here it won
 ### I want to request features or sound effects. Can I do that?
 
 Yes! It's just a matter of whether I'll have time to do it or not. I'm more likely to accept sound effect requests based on videos, since I usually try to update the app with a video per day. You can send me requests by emailing me at:
-###### whatnoww2@gmail.com
-
+whatnoww2@gmail.com
 or tweeting at me: https://twitter.com/WhatnowwYT
+
+### How can I get notified for future updates?
+
+I'll be posting updates and changelogs both here and on my [Channel](https://www.youtube.com/whatnoww2) as videos.
