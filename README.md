@@ -8,7 +8,7 @@ I'm hoping to make this into an app that anyone can configure to their will thro
 
 <img src="https://i.imgur.com/LVMCrja.jpg" width="400">
 
-![Screenshot2](https://i.imgur.com/9CgeYTS.jpg | width=100)
+<img src="https://i.imgur.com/9CgeYTS.jpg" width="400">
 
 # Progress:
 
