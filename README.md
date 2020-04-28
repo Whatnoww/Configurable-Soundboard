@@ -33,3 +33,8 @@ Grab the apk and install!
 ### Will this come out for iOS?
 
 I can't test iOS devices so unless someone is willing to help me out here it won't be posible.
+
+### I want to request features or sound effects. Can I do that?
+
+Yes! It's just a matter of whether I'll have time to do it or not. I'm more likely to accept sound effect requests based on videos, since I usually try to update the app with a video per day. You can send me requests by emailing me at:
+###### whatnoww2@gmail.com
