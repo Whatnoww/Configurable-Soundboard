@@ -2,6 +2,8 @@
 
 An app I started making after Nmeade got called a soundboard due to his memorable expressions.
 
+I'm hoping to make this into an app that anyone can configure to their will through simple txt editing.
+
 # Progress:
 
 It's a pretty new app so a lot of the configuration information isn't implemented yet.
