@@ -1,6 +1,6 @@
 #: import threading threading
 
-<Principal>
+<Principal>:
     name: "principal"
     backdropsrc: './png/fulltransparent.png'
 
@@ -14,6 +14,7 @@
     layer1posy: -0.5
     layer2posx: 0
     layer2posy: -1
+    gameworld: gameworld
 
     FloatLayout:
 
@@ -65,6 +66,56 @@
             keep_ratio: False
             allow_stretch: True
             pos_hint: {"x": 0, "y": 0}
+
+        GameWorld:
+            id: gameworld
+            gamescreenmanager: gamescreenmanager
+            size_of_gameworld: 1000*1024
+            size_of_entity_block: 128
+            system_count: 8
+            zones: {'general': 10000,}
+
+            PositionSystem2D:
+                system_id: 'position'
+                gameworld: gameworld
+                zones: ['general']
+                size_of_component_block: 128
+            ScaleSystem2D:
+                system_id: 'scale'
+                gameworld: gameworld
+                zones: ['general']
+            ColorSystem:
+                id: 'color'
+                gameworld: gameworld
+                zones: ['general']
+            RotateSystem2D:
+                system_id: 'rotate'
+                gameworld: gameworld
+                zones: ['general']
+            RotateColorScaleRenderer:
+                system_id: 'renderer'
+                gameworld: gameworld
+                zones: ['general']
+                shader_source: '/home/whatnoww/Desktop/Configurable-Soundboard/assets/glsl/positioncolorrotateshader.glsl'
+                system_names: ['renderer', 'position', 'rotate', 'color', 'scale']
+            Renderer:
+                id: renderer
+                gameworld: gameworld
+                system_id: 'renderer'
+                zones: ['general']
+                frame_count: 1
+                updateable: False
+                force_update: True
+                size_of_batches: 128
+                size_of_component_block: 128
+                shader_source: '/home/whatnoww/Desktop/Configurable-Soundboard/assets/glsl/positioncolorrotateshader.glsl'
+        GameScreenManager:
+            id: gamescreenmanager
+            size: root.size
+            pos: root.pos
+            gameworld: gameworld
+            GameScreen:
+                name: 'main'
 
         Opaque:
             text: "The Nmeade Soundboard"
@@ -689,3 +740,29 @@
 
 <Widget>
     font_name: './font/Cabin-Regular'
+
+# Here on lies testing for more advanced background manipulation for principal
+#:import path os.path
+#:import dirname os.path.dirname
+#:import main __main__
+
+<GameScreenManager>:
+    MainScreen:
+        id: main_screen
+
+<MainScreen@GameScreen>:
+    name: 'main'
+    FloatLayout:
+        DebugPanel:
+            size_hint: (.2, .1)
+            pos_hint: {'x': .225, 'y': .025}
+
+<DebugPanel>:
+    Label:
+        pos: root.pos
+        size: root.size
+        font_size: root.size[1]*.5
+        halign: 'center'
+        valign: 'middle'
+        color: (1,1,1,1)
+        text: 'FPS: ' + root.fps if root.fps != None else 'FPS:'

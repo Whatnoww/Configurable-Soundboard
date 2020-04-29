@@ -2,6 +2,8 @@ import time
 import random
 from random import seed
 from random import randint
+
+from kivent_core.gameworld import GameWorld
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen, CardTransition, WipeTransition
 from kivy.core.window import Window
@@ -9,12 +11,18 @@ from kivy.clock import Clock
 from kivy.properties import StringProperty, NumericProperty, ObjectProperty
 from kivy.utils import platform
 from kivy.animation import Animation
+from kivent_core.systems.gamesystem import GameSystem
+from kivent_core.managers.resource_managers import texture_manager
+from kivy.uix.widget import Widget
+from kivy.lang import Builder
+import kivent_core
 
 Window.softinput_mode = 'below_target'
 Window.keyboard_anim_args = {'d': 0.125, 't': 'in_out_quart'}
 
 
 threadshell = ObjectProperty(None)
+texture_manager.load_atlas('/home/whatnoww/Desktop/Configurable-Soundboard/png/assets.atlas')
 
 
 class Principal(Screen):
@@ -33,6 +41,51 @@ class Principal(Screen):
     layer2posx = NumericProperty(0)
     layer2posy = NumericProperty(0)
     stoploop = 0
+
+    def __init__(self, **kwargs):
+        super(Principal, self).__init__(**kwargs)
+        self.gameworld.init_gameworld(
+            ['renderer', 'position', 'rotate', 'color', 'scale'],
+            callback=self.init_game)
+
+    def init_game(self):
+        self.setup_states()
+        self.set_state()
+        self.draw_objects()
+        self.load_models()
+        #self.assign_custom_ID()
+        #self.using_basic_systems()
+
+    def draw_objects(self):
+        init_entity = self.gameworld.init_entity
+
+        dict = {'renderer': {'texture': 'backdrop', 'render': True},
+                  'position': (0, 0),
+                  'rotate': 0,
+                  'scale': 1,
+                  'color': (255,255,255,255),
+                }
+        component_order = ['position', 'rotate', 'scale', 'color', 'renderer']
+        background = init_entity(dict, component_order)
+
+        print(self.gameworld.entities[background].entity_id)
+
+    def setup_states(self):
+        self.gameworld.add_state(state_name='main',
+            systems_added=['renderer', 'position', 'rotate', 'color', 'scale'],
+            systems_removed=[], systems_paused=[],
+            systems_unpaused=['renderer'],
+            screenmanager_screen='main')
+
+    def load_models(self):
+        model_manager = self.gameworld.model_manager
+        model_manager.load_textured_rectangle('vertex_format_4f', 7., 7.,
+                                              'redshell', 'star1-4')
+        model_manager.load_textured_rectangle('vertex_format_4f', 10., 10.,
+                                              'greenshell', 'star1-4-2')
+
+    def set_state(self):
+        self.gameworld.state = 'main'
 
     def on_pre_enter(self, *args):
         if wm.has_screen("setting") is False:
@@ -154,6 +207,19 @@ class Principal(Screen):
         wm.current = "setting"
 
 
+class DebugPanel(Widget):
+    fps = StringProperty(None)
+
+    def __init__(self, **kwargs):
+        super(DebugPanel, self).__init__(**kwargs)
+        Clock.schedule_once(self.update_fps)
+
+    def update_fps(self,dt):
+        self.fps = str(int(Clock.get_fps()))
+        Clock.schedule_once(self.update_fps, .05)
+
+
+
 class Setting(Screen):
 
     def youtube(self):
@@ -224,6 +290,7 @@ class Loader(Screen):
         anim += Animation(imgvis=(1, 1, 1, 1), imgsize=(1, 1), duration=1)
         anim.start(self)
         Clock.schedule_once(loadapp, 0)
+        Builder.unload_file('startup.kv')
 
 
 from kivy.lang import Builder
