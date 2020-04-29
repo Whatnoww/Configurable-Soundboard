@@ -12,8 +12,6 @@ from kivy.animation import Animation
 
 Window.softinput_mode = 'below_target'
 Window.keyboard_anim_args = {'d': 0.125, 't': 'in_out_quart'}
-# Window.size = (536, 953)
-# print(Window.size)
 
 
 threadshell = ObjectProperty(None)
