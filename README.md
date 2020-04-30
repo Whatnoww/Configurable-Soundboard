@@ -22,7 +22,7 @@ Not at the moment. If enough people want it there I'll try to get it up. It's a 
 
 ### Can I get this app?
 
-I'm waiting for permission to release this app, when it's up, it'll be available here:
+It's available here:
 
 https://github.com/Whatnoww/Configurable-Soundboard/releases/tag/1
 
