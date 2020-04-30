@@ -2,8 +2,6 @@
 
 [Video](https://youtu.be/Te0RG1UHByc)
 
-I'll of course be waiting for [Nmeade's](https://www.youtube.com/Nmeade) permission before publishing the app download itself.
-
 A pretty basic app I started making in Kivy after [Nmeade](https://www.youtube.com/Nmeade) got called a soundboard due to his memorable expressions.
 
 I'm hoping to make this into an app that anyone can configure to their will through simple txt editing, including being able to edit colors, sounds, pictures and the number of categories with ease.
