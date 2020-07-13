@@ -22,11 +22,7 @@ Not at the moment. If enough people want it there I'll try to get it up. It's a 
 
 ### Can I get this app?
 
-It's available here:
-
-https://github.com/Whatnoww/Configurable-Soundboard/releases/tag/1
-
-All you'll need to do is grab the apk and install!
+Not yet! Still waiting for permission to release it!
 
 ### Will this come out for iOS?
 
